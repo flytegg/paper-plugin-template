@@ -14,10 +14,6 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
-
-    // Possibly useful libraries
-    //compileOnly("net.kyori:adventure-platform-bukkit:4.1.0")
-    //implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.11")
 }
 
 tasks {
@@ -31,8 +27,8 @@ tasks {
 
     shadowJar {
         relocate("kotlin", "com.example.kotlin")
-        relocate("org.jetbrains.annotations", "link.portalbox.jetbrains.annotations")
-        relocate("org.intellij.lang.annotations", "link.portalbox.intellij.lang.annotations")
+        relocate("org.jetbrains.annotations", "com.example.jetbrains.annotations")
+        relocate("org.intellij.lang.annotations", "com.example.intellij.lang.annotations")
     }
 
     runServer {
