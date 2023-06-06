@@ -1,0 +1,10 @@
+# --------------- Variables --------------- #
+# These variables are hard-coded, and cannot be added by the user, though the text content can change.
+prefix: "<bold><dark_gray>[<aqua>Template</aqua>] ></bold><reset> "
+
+# --------------- Messages --------------- #
+
+no-permission: "<prefix><red>No tiene permiso para utilizar este comando."
+illegal-arguments: "<prefix><red>¡Argumentos ilegales! Utilice la ayuda de <aqua>/template</aqua> para obtener más información."
+example-message: "<prefix><white>Este es un mensaje de ejemplo."
+

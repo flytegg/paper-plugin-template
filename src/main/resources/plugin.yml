@@ -1,0 +1,11 @@
+name: Paper-Kotlin-Template
+version: 1.0.0
+main: com.example.pluginName.PluginName
+api-version: 1.13
+authors: [ The Flyte Team ]
+description: Paper Plugin Template written in Kotlin.
+website: https://flyte.gg
+commands:
+  template:
+    aliases: [t]
+    description: Template Command
