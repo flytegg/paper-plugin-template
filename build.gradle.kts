@@ -1,37 +1,42 @@
 plugins {
-    kotlin("jvm") version "1.7.21"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("xyz.jpenilla.run-paper") version "2.0.1"
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.shadow)
+    alias(libs.plugins.paperweight)
+    alias(libs.plugins.run.paper)
 }
 
-group = "com.example"
+group = "gg.flyte"
 version = "1.0.0"
 
 repositories {
     mavenCentral()
+    maven("https://jitpack.io")
+    maven("https://repo.flyte.gg/releases")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.20.2-R0.1-SNAPSHOT")
+
+    implementation(libs.twilight)
+    implementation(libs.paperlib)
+
+    implementation(libs.lamp.common)
+    implementation(libs.lamp.bukkit)
+    implementation(libs.lamp.brigadier)
 }
 
 tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
+    compileKotlin { kotlinOptions.jvmTarget = "17" }
+    build { dependsOn(shadowJar) }
+    runServer { minecraftVersion("1.20.2") }
 
     shadowJar {
         relocate("kotlin", "com.example.kotlin")
-        relocate("org.jetbrains.annotations", "com.example.jetbrains.annotations")
-        relocate("org.intellij.lang.annotations", "com.example.intellij.lang.annotations")
+        relocate("org.jetbrains.annotations", ".flyte.jetbrains.annotations")
+        relocate("org.intellij.lang.annotations", "gg.flyte.intellij.lang.annotations")
+        relocate("io.papermc.lib", "gg.flyte.paperlib")
     }
 
-    runServer {
-        minecraftVersion("1.19.4")
-    }
+
 }
