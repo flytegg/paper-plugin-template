@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "gg.flyte"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -27,16 +27,14 @@ dependencies {
 }
 
 tasks {
-    compileKotlin { kotlinOptions.jvmTarget = "17" }
     build { dependsOn(shadowJar) }
     runServer { minecraftVersion("1.20.2") }
+    compileKotlin { kotlinOptions.jvmTarget = "17" }
 
     shadowJar {
-        relocate("kotlin", "com.example.kotlin")
-        relocate("org.jetbrains.annotations", ".flyte.jetbrains.annotations")
-        relocate("org.intellij.lang.annotations", "gg.flyte.intellij.lang.annotations")
+        relocate("kotlin", "gg.flyte.kotlin")
         relocate("io.papermc.lib", "gg.flyte.paperlib")
+        relocate("org.jetbrains.annotations", "gg.flyte.jetbrains.annotations")
+        relocate("org.intellij.lang.annotations", "gg.flyte.intellij.lang.annotations")
     }
-
-
 }

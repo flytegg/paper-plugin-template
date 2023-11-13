@@ -1,9 +1,0 @@
-# --------------- Variables --------------- #
-# These variables are hard-coded, and cannot be added by the user, though the text content can change.
-prefix: "<bold><dark_gray>[<aqua>Template</aqua>] ></bold><reset> "
-
-# --------------- Messages --------------- #
-
-no-permission: "<prefix><red>You do not have permission to use this command."
-illegal-arguments: "<prefix><red>Illegal arguments! Please use <aqua>/template help</aqua> for more information."
-example-message: "<prefix><gray>Your username is: <aqua>**{0}**</aqua>. Your operator status is: <aqua>**{1}**</aqua>."
