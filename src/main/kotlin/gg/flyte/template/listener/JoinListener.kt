@@ -27,7 +27,6 @@ class JoinListener : Listener {
                 Component.text("Goodbye, ${player.name}!")
                     .color(NamedTextColor.RED)
             )
-
         }
     }
 
