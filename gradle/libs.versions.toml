@@ -11,7 +11,7 @@ paperlib = "1.0.7"
 bstats = "3.0.2"
 lamp = "3.1.7"
 adventure = "4.14.0"
-adventure-platform-bukkit = "4.3.1"
+adventure-platform-bukkit = "4.3.2"
 
 [libraries]
 twilight = { module = "gg.flyte:twilight", version.ref = "twilight" }
