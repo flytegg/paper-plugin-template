@@ -7,7 +7,7 @@ run-paper = "2.2.2"
 
 # Libraries
 twilight = "1.0.30"
-paperlib = "1.0.7"
+paperlib = "1.0.8"
 bstats = "3.0.2"
 lamp = "3.1.7"
 adventure = "4.14.0"
